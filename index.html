@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b5d">
+  <title>Grammar Challenge · Simple Present</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Zur Levelübersicht">
+      <span class="brand-mark">G</span>
+      <span><strong>Grammar Challenge</strong><small>Simple present · English 8</small></span>
+    </a>
+    <button id="resetButton" class="quiet-button" type="button">Fortschritt zurücksetzen</button>
+  </header>
+
+  <main>
+    <section id="homeView" class="view home-view">
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Your mission</p>
+          <h1>Master the simple present</h1>
+          <p>Trainiere Aussagen, Verneinungen und Fragen. Schaffe mindestens <strong>7 von 10 Aufgaben</strong>, um das nächste Level freizuschalten.</p>
+        </div>
+        <div class="hero-score" aria-label="Gesamtfortschritt">
+          <span id="totalStars">0</span><small>von 21 Sternen</small>
+        </div>
+      </div>
+
+      <div class="overall-progress">
+        <div><span>Gesamtfortschritt</span><strong id="overallLabel">0 %</strong></div>
+        <div class="progress-track"><span id="overallBar"></span></div>
+      </div>
+
+      <section aria-labelledby="levelHeading">
+        <div class="section-heading">
+          <div><p class="eyebrow">Seven stages</p><h2 id="levelHeading">Wähle dein Level</h2></div>
+          <p>Ab Level 5 tippst du selbst.</p>
+        </div>
+        <div id="levelGrid" class="level-grid"></div>
+      </section>
+
+      <section class="quick-guide" aria-labelledby="guideHeading">
+        <h2 id="guideHeading">Kurz erklärt</h2>
+        <div class="guide-grid">
+          <article><span>1</span><h3>Choose</h3><p>Tippe die richtige Antwort an.</p></article>
+          <article><span>2</span><h3>Build</h3><p>Bringe Wörter in die richtige Reihenfolge.</p></article>
+          <article><span>3</span><h3>Type</h3><p>Schreibe Wörter oder Sätze selbst.</p></article>
+        </div>
+      </section>
+    </section>
+
+    <section id="gameView" class="view game-view" hidden>
+      <div class="game-topbar">
+        <button id="backButton" class="back-button" type="button">← Levelübersicht</button>
+        <div class="game-level"><span id="gameLevelNumber">Level 1</span><strong id="gameLevelTitle">Warm-up</strong></div>
+        <div class="question-count"><span id="questionCount">1 / 10</span></div>
+      </div>
+      <div class="progress-track game-progress"><span id="questionBar"></span></div>
+
+      <article id="questionCard" class="question-card">
+        <div class="question-meta"><span id="taskType">Choose</span><span id="scoreNow">0 Punkte</span></div>
+        <p id="instruction" class="instruction"></p>
+        <h2 id="prompt" class="prompt"></h2>
+        <div id="taskArea" class="task-area"></div>
+        <div id="feedback" class="feedback" hidden></div>
+        <div class="action-row">
+          <button id="hintButton" class="hint-button" type="button">Tipp auf Deutsch</button>
+          <button id="checkButton" class="primary-button" type="button">Prüfen</button>
+          <button id="nextButton" class="primary-button" type="button" hidden>Weiter →</button>
+        </div>
+        <div id="hintBox" class="hint-box" hidden></div>
+      </article>
+    </section>
+
+    <section id="resultView" class="view result-view" hidden>
+      <div id="resultCard" class="result-card">
+        <p id="resultEyebrow" class="eyebrow">Level complete</p>
+        <h1 id="resultTitle">Geschafft!</h1>
+        <div class="result-score"><strong id="resultPercent">70 %</strong><span id="resultFraction">7 von 10 richtig</span></div>
+        <div id="resultStars" class="result-stars" aria-label="Erreichte Sterne"></div>
+        <p id="resultMessage"></p>
+        <div class="result-actions">
+          <button id="retryButton" class="secondary-button" type="button">Level wiederholen</button>
+          <button id="continueButton" class="primary-button" type="button">Weiter</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="resetDialog">
+    <form method="dialog">
+      <h2>Fortschritt zurücksetzen?</h2>
+      <p>Alle freigeschalteten Levels und Ergebnisse werden auf diesem Gerät gelöscht.</p>
+      <div class="dialog-actions">
+        <button value="cancel" class="secondary-button">Abbrechen</button>
+        <button id="confirmReset" value="confirm" class="danger-button">Alles löschen</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
